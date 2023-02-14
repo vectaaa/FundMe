@@ -4,13 +4,15 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import Accounts from './Accounts';
 import SettingsScreen from './Settings'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
+const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
-const SideBar = () => {
+const SideBar = ({navigation}) => {
   return (
-    <NavigationContainer>
+    
       <Drawer.Navigator>
         <Drawer.Screen
             key='dashboard'
@@ -23,7 +25,7 @@ const SideBar = () => {
             component={SettingsScreen}
         />
       </Drawer.Navigator>
-    </NavigationContainer>
+    
   )
 }
 
